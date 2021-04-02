@@ -24,7 +24,7 @@ public class Main {
         personList.add(ignatiy);
         personList.add(tumakov);
         personList.add(dima);
-        personList.add(sasha;
+        personList.add(sasha);
         List<Person> filter= personList
         .stream()
                 .filter((person)->!personList.contains(null))
