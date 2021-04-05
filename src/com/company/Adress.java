@@ -19,4 +19,10 @@ public class Adress {
     public int getHouseNumber(){
         return houseNumber;
     }
+    @Override
+    public String toString(){
+        return "City: "+ city+
+                " Street: "+street+
+                " House number: "+houseNumber+"\n";
+    }
 }
