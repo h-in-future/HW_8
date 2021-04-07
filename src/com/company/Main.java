@@ -12,7 +12,7 @@ public class Main {
         Adress secondAdress= new Adress("Minsk","Solodilova",17);
         Adress thirdAdress= new Adress("Minsk","Nevorofskay",15);
         Adress fourthAdress= new Adress("Minsk","Lidskaya",16);
-        Adress fifthAdress= new Adress("Minsk","Samsonova",18);
+        Adress fifthAdress= new Adress("Minsk","Samsonova",0);
         Adress sixthAdress= new Adress(null,null,0);
 
 	Person vadim=new Person("Vadim","Alferov",firstAdress);
@@ -28,16 +28,15 @@ public class Main {
         personaList.add(tumakov);
         personaList.add(dima);
         personaList.add(sasha);
-        for(int a=0;a<personaList.size(); a++){
-            int finalA = a;
-            int finalB = a+1;
+
             List<Person> filter = personaList
                     .stream()
-                    .filter((person) -> personaList.get(finalA).getName()!=null&&personaList.get(finalA).getSurname()!=null&&personaList.get(finalA).getCity()!=null)
-                    .sorted((person1,person2) -> personaList.get(finalA+1).compareTo(personaList.get(finalA)))
+
+                    .filter((person) -> person.getName()!=null&&person.getSurname()!=null&&person.getCity()!=null)
+                    .sorted(Comparator.comparing(Person::getHouseNumber))
                     .collect(Collectors.toList());
-            System.out.println(filter.get(finalA));
-        }
+            System.out.println(filter);
+
 //        List<String> list = new ArrayList<>();
 //list.add("aaaaaaaaaa");
 //list.add("bbbb");
