@@ -29,11 +29,12 @@ public class Main {
         personaList.add(dima);
         personaList.add(sasha);
 
-            List<Person> filter = personaList
+            List<String> filter = personaList
                     .stream()
 
                     .filter((person) -> person.getName()!=null&&person.getSurname()!=null&&person.getCity()!=null)
                     .sorted(Comparator.comparing(Person::getHouseNumber))
+                    .map((person)->person.toString())
                     .collect(Collectors.toList());
             System.out.println(filter);
 
